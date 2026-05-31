@@ -35,14 +35,6 @@ async function onLoadMore() {
 
     createGallery(data.hits);
 
-    const card = document.querySelector('.gallery-item');
-    const cardHeight = card.getBoundingClientRect().height;
-
-    window.scrollBy({
-      top: cardHeight * 2,
-      behavior: 'smooth',
-    });
-
     if (page >= totalPages) {
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
@@ -50,6 +42,7 @@ async function onLoadMore() {
       return;
     }
 
+    smoothScroll();
     showLoadMoreBtn();
   } catch (error) {
     iziToast.error({

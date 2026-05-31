@@ -69,3 +69,4 @@ export function showLoadMoreBtn() {
 
 export function hideLoadMoreBtn() {
   loadMoreBtn.classList.add('is-hidden');
+}

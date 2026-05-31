@@ -35,6 +35,8 @@ async function onLoadMore() {
 
     createGallery(data.hits);
 
+    smoothScroll();
+
     if (page >= totalPages) {
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
@@ -42,7 +44,6 @@ async function onLoadMore() {
       return;
     }
 
-    smoothScroll();
     showLoadMoreBtn();
   } catch (error) {
     iziToast.error({
